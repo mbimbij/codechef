@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 
 public class AtmTest {
+
+    private final Atm atm = new Atm();
+
     @Test
     public void whenWithdrawNegativeAmount_thenException() {
-        // GIVEN
-        Atm atm = new Atm();
-
         // WHEN
         Assertions.assertThatThrownBy(() -> atm.withdraw(-10))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -18,9 +18,6 @@ public class AtmTest {
 
     @Test
     public void whenWithdrawAmountGreaterThan2000_thenException() {
-        // GIVEN
-        Atm atm = new Atm();
-
         // WHEN
         Assertions.assertThatThrownBy(() -> atm.withdraw(2001))
                 .isInstanceOf(IllegalArgumentException.class)
