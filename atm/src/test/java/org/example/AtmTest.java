@@ -33,4 +33,11 @@ public class AtmTest {
         Assertions.assertThat(atm.withdraw(42, 120.0))
                 .isEqualTo(120.0, offset(0.1));
     }
+
+    @Test
+    public void whenInsufficientFunds_thenReturnInitialAmount() {
+        // WHEN
+        Assertions.assertThat(atm.withdraw(300, 120.0))
+                .isEqualTo(120.0, offset(0.1));
+    }
 }
