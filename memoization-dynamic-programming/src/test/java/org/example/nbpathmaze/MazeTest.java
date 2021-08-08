@@ -1,5 +1,6 @@
 package org.example.nbpathmaze;
 
+import org.example.nbpathmaze.Maze.Obstacle;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -49,13 +50,29 @@ class MazeTest {
         verify(maze, Mockito.atMost(2)).getNbPath(2, 2, 2, 2);
     }
 
-//    @Test
-//    void given3_3Maze_thenNoPositionHasBeenComputedMoreThanOnce() {
-//        Maze maze = spy(new Maze(3, 3));
-//        verify(maze, Mockito.atMost(2)).getNbPath(1, 1, 2, 2);
-//        verify(maze, Mockito.atMost(2)).getNbPath(1, 2, 2, 2);
-//        verify(maze, Mockito.atMost(2)).getNbPath(2, 1, 2, 2);
-//        verify(maze, Mockito.atMost(2)).getNbPath(2, 2, 2, 2);
-//        verify(maze, Mockito.atMostOnce()).getNbPath(2, 2, 2, 2);
-//    }
+    @Test
+    void given8_8MazeFromDemo_shouldComputePathLengthCorrectly() {
+        Maze maze = spy(
+                new Maze(8, 8,
+                        new Obstacle(1,2),
+                        new Obstacle(1,6),
+                        new Obstacle(2,4),
+                        new Obstacle(3,0),
+                        new Obstacle(3,2),
+                        new Obstacle(3,5),
+                        new Obstacle(4,2),
+                        new Obstacle(3,5),
+                        new Obstacle(5,3),
+                        new Obstacle(5,4),
+                        new Obstacle(5,6),
+                        new Obstacle(6,1),
+                        new Obstacle(6,5)
+                ));
+        maze.getNbPath(0,0,7,7);
+        verify(maze, Mockito.atMost(2)).getNbPath(1, 1, 2, 2);
+        verify(maze, Mockito.atMost(2)).getNbPath(1, 2, 2, 2);
+        verify(maze, Mockito.atMost(2)).getNbPath(2, 1, 2, 2);
+        verify(maze, Mockito.atMost(2)).getNbPath(2, 2, 2, 2);
+        verify(maze, Mockito.atMostOnce()).getNbPath(2, 2, 2, 2);
+    }
 }
