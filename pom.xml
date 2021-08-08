@@ -13,6 +13,7 @@
         <module>OPTSET</module>
         <module>bfs-dfs</module>
         <module>recursion</module>
+        <module>memoization-dynamic-programming</module>
     </modules>
 
     <properties>
