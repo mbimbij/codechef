@@ -12,6 +12,7 @@
         <module>atm</module>
         <module>OPTSET</module>
         <module>bfs-dfs</module>
+        <module>recursion</module>
     </modules>
 
     <properties>
