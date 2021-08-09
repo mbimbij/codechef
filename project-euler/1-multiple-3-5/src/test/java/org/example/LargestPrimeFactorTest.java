@@ -9,7 +9,7 @@ import java.util.List;
 public class LargestPrimeFactorTest {
     @Test
     void largest_prime_factor_test() {
-        List<int[]> primeFactors = primeFactorization(13195);
+        List<int[]> primeFactors = primeFactorization(600851475143L);
         primeFactors.forEach(ints -> System.out.println(Arrays.toString(ints)));
     }
 
