@@ -15,7 +15,6 @@
         <module>recursion</module>
         <module>memoization-dynamic-programming</module>
         <module>project-euler</module>
-        <module>project-euler/1-multiple-3-5</module>
     </modules>
 
     <properties>
